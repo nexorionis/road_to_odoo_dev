@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="booking_system_form" model="ir.ui.view">
+            <field name="name">booking.system.form</field>
+            <field name="model">booking.system</field>
+            <field name="arch" type="xml">
+                <form string="Booking">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="booking_system_tree" model="ir.ui.view">
+            <field name="name">booking.system.tree</field>
+            <field name="model">booking.system</field>
+            <field name="arch" type="xml">
+                <tree string="Booking">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        <record id="action_booking_system" model="ir.actions.act_window">
+            <field name="name">Booking System</field>
+            <field name="res_model">booking.system</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <menuitem id="root_booking_system"
+                  name="Booking"
+                  sequence="200"/>
+        <menuitem id="menu_booking_system"
+                  name="Booking System"
+                  sequence="10"
+                  action="action_booking_system"
+                  parent="client_booking_system.root_booking_system"
+        />
+    </data>
+
+</odoo>
